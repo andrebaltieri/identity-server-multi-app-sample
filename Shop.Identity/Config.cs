@@ -67,7 +67,24 @@ namespace Shop.Identity
                         "Shop.Api.Products"
                     },
                     AllowAccessTokensViaBrowser = true // Required for SPA
-                }
+                },
+                new Client
+                {
+                    ClientId = "Shop.Mobile",
+                    ClientName = "Mobile App",
+                    AllowedGrantTypes = GrantTypes.Code,
+                    RequirePkce = true,
+                    RequireClientSecret = false,
+                    RedirectUris =           { "http://localhost:3000/" },
+                    PostLogoutRedirectUris = { "http://localhost:3000" },
+                    AllowedCorsOrigins =     { "http://localhost:3000" },
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "Shop.Api.Products"
+                    },
+                },
             };
 
     }
