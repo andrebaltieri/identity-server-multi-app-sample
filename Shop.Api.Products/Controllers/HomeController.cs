@@ -18,13 +18,13 @@ namespace Shop.Api.Products.Controllers
 
         [HttpGet("products")]
         [Authorize]
-        public IActionResult Products()
+        public IEnumerable<Product> Products()
         {
             var products = new List<Product>
             {
                 new Product(1, "Mousepad"), new Product(2, "Teclado Gamer"), new Product(3, "Monitor")
             };
-            return new JsonResult(new { User = User.Identity.Name ?? "", Products = products });
+            return products;
         }
     }
 

@@ -26,6 +26,16 @@ namespace Shop.Api.Products
                     options.RequireHttpsMetadata = false;
                     options.Audience = "Shop.Api.Products";
                 });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("default", policy =>
+                {
+                    policy.WithOrigins("http://localhost:3002")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -38,6 +48,7 @@ namespace Shop.Api.Products
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors("default");
 
             app.UseAuthentication();
             app.UseAuthorization();

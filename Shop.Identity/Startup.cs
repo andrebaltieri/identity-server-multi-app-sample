@@ -36,6 +36,16 @@ namespace Shop.Identity
                     options.ClientId = "<insert here>";
                     options.ClientSecret = "<insert here>";
                 });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("default", policy =>
+                {
+                    policy.WithOrigins("http://localhost:3002")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
         }
 
         public void Configure(IApplicationBuilder app)
@@ -45,6 +55,7 @@ namespace Shop.Identity
 
             app.UseStaticFiles();
             app.UseRouting();
+            app.UseCors("default");
 
             app.UseIdentityServer();
 

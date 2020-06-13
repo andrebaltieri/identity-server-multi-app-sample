@@ -42,6 +42,8 @@ namespace Shop.Ui.WebSite
                 options.ClientSecret = "secret";
                 options.ResponseType = "code";
                 options.SaveTokens = true;
+                options.Scope.Add("Shop.Api.Products");
+                options.Scope.Add("offline_access");
             });
         }
 

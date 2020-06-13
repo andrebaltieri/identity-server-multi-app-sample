@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Api.Products", "Shop.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Jobs.PaymentConciliation", "Shop.Jobs.PaymentConciliation\Shop.Jobs.PaymentConciliation.csproj", "{D8904182-5D31-4BDF-BE2A-9D136CCF5CF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Ui.WebSite", "Shop.Ui.WebSite\Shop.Ui.WebSite.csproj", "{4D543D3F-1AF2-49C5-A000-F6BAD08EF83A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Ui.WebSite", "Shop.Ui.WebSite\Shop.Ui.WebSite.csproj", "{4D543D3F-1AF2-49C5-A000-F6BAD08EF83A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

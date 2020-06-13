@@ -45,8 +45,28 @@ namespace Shop.Identity
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        IdentityServerConstants.StandardScopes.Email
-                    }
+                        IdentityServerConstants.StandardScopes.Email,
+                        "Shop.Api.Products"
+                    },
+                    AllowOfflineAccess = true // Habilita refresh tokens
+                },
+                new Client
+                {
+                    ClientId = "Shop.Ui.Backoffice",
+                    ClientName = "Backoffice App",
+                    AllowedGrantTypes = GrantTypes.Code,
+                    RequirePkce = true,
+                    RequireClientSecret = false,
+                    RedirectUris =           { "http://localhost:3002/callback" },
+                    PostLogoutRedirectUris = { "http://localhost:3002/" },
+                    AllowedCorsOrigins =     { "http://localhost:3002" },
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "Shop.Api.Products"
+                    },
+                    AllowAccessTokensViaBrowser = true // Required for SPA
                 }
             };
 
